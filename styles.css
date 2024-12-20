@@ -8,7 +8,7 @@ header {
     display: flex;
     flex-direction: row;
     width: 100%;
-    
+    margin: 25px 0;
     justify-content:space-between;
     padding: 25px;
 }
@@ -26,6 +26,13 @@ nav > ul {
 nav li {
     margin: 0 1rem;
     list-style-type: none;
+}
+
+.underline {
+    border-bottom: 2px solid darkslategray;
+    width: 60px;
+    display: flex;
+    justify-content: center;
 }
 
 /* li a {
@@ -64,8 +71,8 @@ h3 {
 
 .buy-section {
     display: flex;
-    justify-content: center;
-    margin-top: 80px;
+    justify-content: space-between;
+    margin: 80px 0 150px;
     font-size: 1.2rem;
     gap: 250px;
     font-weight: bold;
@@ -73,13 +80,22 @@ h3 {
 
 .buy-section::before{
     content: "";
+    width: 200px;
 }
 
+.buy-section div {
+    margin-right: 40px;
+}
 
 .center-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     padding: 15px 22px;
     border: 1px solid black;
     border-radius: 25px;
+    font-size: 1rem;
 }
 
 div a {
@@ -93,4 +109,5 @@ div a {
     background-color: black;
     border-radius: 25px;
     color: white;
-}
+    
+} 
