@@ -1,0 +1,129 @@
+.dashboard {
+    display: flex;
+    min-height: 100vh;
+}
+
+.main-content {
+    flex-grow: 1;
+    padding: 30px;
+    background-color: var(--bg-light);
+}
+
+.dashboard-title {
+    display: block;
+    font-size: 28px;
+    margin-bottom: 30px;
+    font-weight: 700;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 25px;
+    margin-bottom: 30px;
+
+}
+
+@media screen and (max-width: 960px) {
+    .stats-grid {
+        grid-template-columns: repeat(2, 2fr);
+        grid-template-rows: repeat(2, auto);
+    }
+}
+
+@media screen and (max-width: 720px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+    }
+}
+
+.stat-card {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px 15px 20px 25px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+
+    transition: 
+    box-shadow 0.3s ease,
+    scale 0.3s ease,
+    background-color 0.3s ease-in,
+    color 0.3s ease-in;
+}
+
+.stat-card:hover {
+    cursor: pointer;
+    color: var(--text-secondary);
+    background-color: var(--hover-gray);
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    scale: 1.1;
+}
+
+.stat-card:active {
+    scale: 0.95;
+    background-color: var(--bg-black);
+}
+
+.stat-icon {
+    height: 30%;
+    margin-bottom: 10px;
+    margin-right: 5%;
+    color: var(--text-secondary);
+}
+
+.stat-label {
+    display: inline-block;
+    align-items: center;
+    font-size: 80%;
+    color: var(--text-secondary);
+    margin-bottom: 5px;
+}
+
+.stat-value {
+    font-size: 100%;
+    font-weight: 700;
+}
+
+.recent-activity {
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px;
+}
+
+.activity-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 20px;
+}
+
+.activity-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.activity-item:last-child {
+    border-bottom: none;
+}
+
+.activity-details {
+    flex-grow: 1;
+}
+
+.activity-type {
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.activity-description {
+    color: var(--text-secondary);
+    font-size: 13px;
+}
+
+.activity-time {
+    color: var(--text-secondary);
+    font-size: 12px;
+}
