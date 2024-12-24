@@ -64,9 +64,9 @@ li a {
 
 .back-btn:hover {
     color: var(--bg-white);
-    border-color: var(--bg-white);
     background-color: var(--black);
     font-weight: bold;
+
 }
 
 

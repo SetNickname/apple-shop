@@ -2,6 +2,10 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow: hidden;
+}
+
 header {
     display: flex;
     flex-direction: row;
@@ -32,12 +36,18 @@ nav li {
 
 
 .main-hero {
-    margin: 25px 35px ;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin: 42px 0 20px;
 }
 
 .hero-img {
     object-fit: cover;
-    width: 100%;
+    max-width: 1600px;
+    width: 70%;
     border-radius: 25px;
 }
 
@@ -47,23 +57,24 @@ li a {
 }
 
 .description-text {
-    margin-left: 35px;
+    margin-left: 290px;
 }
 
-h2 {
-    font-size: 1.2rem;
+.h2-bold {
+    font-size: 24px;
 }
 
-h3 {
+.h3-text {
     font-size: 1.1rem;
     font-weight: 400;
+    color: var(--text-secondary);
 }
 
 
 .buy-section {
     display: flex;
     justify-content: space-between;
-    margin: 80px 0 150px;
+    margin: 45px 0 150px;
     font-size: 1rem;
     gap: 250px;
     font-weight: bold;
@@ -135,8 +146,37 @@ a.nav-link:hover::after{
     width: 100%;
 }
 
+.large-text {
+    font-size: 28px;
+}
+
+.small-text {
+    font-size: 15px;
+}
+
+.profile-text {
+    margin-left: 36px;
+}
+
+.iphone-img {
+    border: 1px solid var(--black);
+}
+
+.accessories-home {
+    object-fit: cover;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+}
+
+.centered-section {
+    margin: 50px auto;
+    width: 180px;
+    font-weight: bold;
+
+}
 
 @media (max-width: 768px) {
+    /* Airpods */
     .buy-section {
         display: flex;
         justify-content: space-between;
@@ -157,9 +197,24 @@ a.nav-link:hover::after{
         width: 25%;
         margin-left: 38px;
     }
+
+    .description-text {
+        margin-left: 32px;
+    }
+
+    .centered-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 50px auto;
+        width: 100%;
+        font-size: 0.7rem;
+    }
 }
 
 @media (min-width: 769px) and (max-width:1199px) { 
+    /* Airpods */
     .buy-section {
         display: flex;
         justify-content: space-between;
@@ -178,5 +233,18 @@ a.nav-link:hover::after{
     .center-btn {
         width: 20%;
         margin-left: 38px;
+    }
+
+    .description-text {
+        margin-left: 32px;
+    }
+
+    .centered-section {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        margin: 50px auto;
+        width: 100%;
     }
 }
