@@ -6,36 +6,76 @@
         <title>Apple | Airpods</title>
         <link rel="stylesheet" href="style.css">
         <link rel="stylesheet" href="user.css">
+        <link rel="stylesheet" href="account-container-hidden.css">
     </head>
     <body>
-        <header>
-            <img src="assets/apple.png" alt="apple logo" class="logo-size" >
-            <nav class="navigation-bar">
-                <ul>
-                    <li class="underline"><a href="">Airpods</a></li>
-                    <li><a href="">iPhone</a></li>
-                    <li><a href="">Accessories</a></li>
-                </ul>
-            </nav>
-            <img src="assets/bag.png" alt="cart bag" class="logo-size">
-        </header>
-        <main>
-            <section class="main-hero">
-                <img class="hero-img" src="assets/hero.png" alt="airpods pro 2">
+        <div class="bag-container">
+            <header>
+                <h2 class="header-text">Your Bag is empty</h2>
+            </header>
+            <section class="profile-section">
+                <p class="description-text profile-text">My Profile</p>
+                <nav class="bag-nav-link">
+                    <ul>
+                        <li>
+                            <img src="assets/box.png" alt="order icon" class="logo-size">
+                            <a href="#">Orders</a>
+                        </li>
+                        <li>
+                            <img src="assets/bag.png" alt="cart icon" class="logo-size">
+                            <a href="#">Cart</a>
+                        </li>
+                        <li>
+                            <img src="assets/account.png" alt="account icon" class="logo-size">
+                            <a href="#">Account</a>
+                        </li>
+                    </ul>
+                </nav>
+                <a href="#" class="back-btn" id="hide-bag-btn">BACK</a>
             </section>
-            <section class="description-text">
-                <h2>Five fresh colors. Bold sound</h2>
-                <h3>$549</h3>
-            </section>
-            <section class="buy-section">
-                <div class="center-btn">
-                    <a href="">More Products</a>
+        </div>
+        <!-- blur this body when container is shown -->
+        <div class="target-body">
+            <header>
+                <div class="home-link logo-hover">
+                    <img src="assets/apple.png" alt="apple logo" class="logo-size">
                 </div>
-                <div class="right-btn">
-                    <a href="">Buy</a>
+                <nav class="navigation-bar">
+                    <ul>
+                        <li>
+                            <a href="#" class="nav-link active">AirPods</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link">iPhone</a>
+                        </li>
+                        <li>
+                            <a href="#" class="nav-link">Accessories</a>
+                        </li>
+                    </ul>
+                </nav>
+                <div class="cart-link logo-hover">
+                    <img src="assets/bag.png" alt="cart bag" class="logo-size" id="show-bag-btn">
                 </div>
-            </section>
-        </main>
+            </header>
+            <main>
+                <section class="main-hero">
+                    <img class="hero-img" src="assets/hero.png" alt="airpods pro 2">
+                </section>
+                <section class="description-text">
+                    <h2 class="h2-bold">Five fresh colors. Bold sound</h2>
+                    <h3 class="h3-text">$549</h3>
+                </section>
+                <section class="buy-section">
+                    <div class="center-btn">
+                        <a href="">More Products</a>
+                    </div>
+                    <div class="right-btn">
+                        <a href="">Buy</a>
+                    </div>
+                </section>
+            </main>
+        </div>
+        <script src="user-navbar-scripts.js"></script>
+        <script src="hide-show-bag.js"></script>
     </body>
-
 </html>
