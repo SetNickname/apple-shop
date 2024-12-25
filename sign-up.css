@@ -1,0 +1,60 @@
+.subtext {
+    text-align: center;
+    color: var(--black);
+    margin-top: 15px;
+}
+
+.register {
+    text-align: center;
+    margin-top: 20px;
+    /* background-color: red; */
+    max-width: 700px;
+}
+
+.space-margin {
+    margin: 8px 7px;
+    border-radius: 8px;
+}
+
+.title {
+    margin: 60px 0 0;
+}
+
+button[type="submit"] {
+    width: 98%;
+    height: 50px;
+    background-color: var(--accent-blue);
+    color: var(--bg-white);
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    margin: 10px 0;
+}
+
+button[type="submit"]:hover {
+    background-color: var(--black);
+}
+
+.full {
+    width: 687px;
+}
+
+.half {
+    width: 50%;
+}
+
+.half-field {
+    display: flex;
+    justify-content: space-between;
+    /* width: inherit; */
+    
+}
+
+.reminder {
+    background-color: var(--light-gray-15);
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

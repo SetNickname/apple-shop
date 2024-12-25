@@ -1,0 +1,13 @@
+input {
+    width: 100%;
+}
+
+input:focus {
+    border: 1px solid var(--accent-blue);
+    -webkit-transition: 1s;
+    transition: 1s;
+}
+
+.title {
+    margin: 100px 0 0;
+}
