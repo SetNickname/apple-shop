@@ -17,6 +17,11 @@
     --icon-customer: #6b16cc;
     --icon-products: #e3901b;
     --black: #000000;
+
+    --dark-gray: #707A83;
+    --light-gray: #6C757D;
+    --link-blue: #0063C0;
+    --light-gray-15: #6c757d27;
 }
 
 body {
