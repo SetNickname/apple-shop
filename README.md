@@ -27,4 +27,4 @@ To open this project on your local machine, follow these steps:
     root with your_database_username
     and replace_this_with_your_password as your_database_password
     ```
-7. Lastly, you can now see it running on [`localhost`](#http://localhost/apple-shop/login.php)
+7. Lastly, you can now see it running on [localhost](http://localhost/apple-shop/login.php)
