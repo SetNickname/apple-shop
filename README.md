@@ -1,6 +1,7 @@
 # apple-shop
 
-<!-- add home page here -->
+![home-airpods](https://github.com/user-attachments/assets/ad8f35a1-17e8-467f-a8a8-e8887d7f9fd8)
+![admin-dashboard](https://github.com/user-attachments/assets/23cf6f0a-6cde-431d-a933-d6702bc9b757)
 
 Apple Shop is a web-based e-commerce platform with an admin dashboard that sells apple products but is currently limited to iPhones to Apple Accessories. This project will focus on web security and it's implementation to the website.
 
