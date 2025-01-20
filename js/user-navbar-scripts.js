@@ -1,25 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const navLinks = document.querySelectorAll('.nav-link');
+    // Navigation mapping object
+    const navigationPaths = {
+        // Main nav links
+        'AirPods': 'home-airpods.html',
+        'iPhone': 'home-iphone.html',
+        'Accessories': 'home-accessories.html',
+        // Bag nav links
+        'Orders': 'pay.html',
+        'Cart': 'cart.html',
+        'Account': 'account.html'
+    };
 
-    navLinks.forEach(link => {
+    // Select all navigation links at once
+    const allNavLinks = document.querySelectorAll('.nav-link, .bag-nav-link a');
+
+    allNavLinks.forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
             
             const linkText = link.textContent.trim();
+            const path = navigationPaths[linkText];
             
-            switch(linkText) {
-                case 'AirPods':
-                    window.location.href = 'home-airpods.html';
-                    break;
-                case 'iPhone':
-                    window.location.href = 'home-iphone.html';
-                    break;
-                case 'Accessories':
-                    window.location.href = 'home-accessories.html';
-                    break;
-                default:
-                    alert('No navigation defined for this link');
-                }
-              });
+            if (path) {
+                window.location.href = path;
+            } else {
+                alert('No navigation defined for this link');
+            }
         });
+    });
 });
