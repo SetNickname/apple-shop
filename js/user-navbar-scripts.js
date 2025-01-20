@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         // Bag nav links
         'Orders': 'pay.html',
         'Cart': 'cart.html',
-        'Account': 'account.html'
+        'Account': 'user-account-setting.html'
     };
 
     // Select all navigation links at once
