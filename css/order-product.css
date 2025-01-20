@@ -28,11 +28,6 @@
     background-color: var(--bg-black);
 }
 
-.prod-status{
-    text-align: end;
-    font-size: 14px;
-}
-
 .prod-info-grid{
     display: grid;
     grid-template-columns: 100px 1fr;
@@ -40,6 +35,11 @@
 
 .prod-pic{
     width: 80px;
+}
+
+.prod-status{
+    text-align: end;
+    font-size: 14px;
 }
 
 .prod-name{
