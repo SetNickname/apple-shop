@@ -23,7 +23,7 @@ body {
     color: var(--text-primary);
     line-height: 1.6;
     height: auto;
-    overflow: hidden;
+    overflow: auto;
 }
 
 .icon {
