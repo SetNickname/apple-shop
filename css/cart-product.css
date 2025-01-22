@@ -128,3 +128,22 @@ input[type="checkbox"]:hover {
     min-width: 20px;
     text-align: center;
 }
+
+.check-btn {
+    width: 100px;
+    margin: 18px auto 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--black);
+    border-radius: 20px;
+
+    text-decoration: none;
+    color: inherit
+}
+.check-btn:hover {
+    color: var(--bg-white);
+    background-color: var(--black);
+    font-weight: bold;
+}
