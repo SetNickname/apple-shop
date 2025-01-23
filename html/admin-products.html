@@ -72,12 +72,157 @@
                 </div>
             </aside>
 
-            <div class="main-content">
-                <ul>
-                    
-                </ul>
-                 </div>
-        </div>
+            <main class="main-content">
+                <div class="content-header">
+                    <h2 class="page-title">Products</h2>
+                    <div class="search-bar">
+                        <input type="text" class="search-input" placeholder="Search products...">
+                        <div class="filter-group">
+                            <select class="filter-select">
+                                <option value="">Sort by</option>
+                                <option value="newest">Newest</option>
+                                <option value="price-high">Price: High to Low</option>
+                                <option value="price-low">Price: Low to High</option>
+                                <option value="stock">Stock Level</option>
+                            </select>
+                            <button class="action-button">
+                                <i class="fas fa-plus"></i>
+                                Add Product
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            
+                <div class="content-card">
+                    <div class="product-summary">
+                        <div class="summary-card">
+                            <i class="fas fa-box"></i>
+                            <div class="summary-details">
+                                <h3>NA</h3>
+                                <p>NA</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <i class="fas fa-check-circle"></i>
+                            <div class="summary-details">
+                                <h3>NA</h3>
+                                <p>NA</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <i class="fas fa-exclamation-circle"></i>
+                            <div class="summary-details">
+                                <h3>NA</h3>
+                                <p>NA</p>
+                            </div>
+                        </div>
+                        <div class="summary-card">
+                            <i class="fas fa-times-circle"></i>
+                            <div class="summary-details">
+                                <h3>NA</h3>
+                                <p>NA</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="category-filters">
+                        <button class="filter-button active">All Products</button>
+                        <button class="filter-button">iPhone</button>
+                        <button class="filter-button">iPad</button>
+                        <button class="filter-button">Mac</button>
+                        <button class="filter-button">Watch</button>
+                        <button class="filter-button">AirPods</button>
+                        <button class="filter-button">Accessories</button>
+                    </div>
+            
+                    <div class="product-grid">
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/api/placeholder/350/350" alt="iPhone 15 Pro">
+                                <div class="product-badge">New</div>
+                            </div>
+                            <div class="product-details">
+                                <h3>NA</h3>
+                                <p class="product-price">NA</p>
+                                <div class="product-meta">
+                                    <span class="status-badge status-active">In Stock</span>
+                                    <span class="stock-count">NA</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="action-button">
+                                        <i class="fas fa-edit"></i>
+                                        Edit
+                                    </button>
+                                    <button class="action-button-secondary">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/api/placeholder/350/350" alt="MacBook Air M3">
+                            </div>
+                            <div class="product-details">
+                                <h3>NA</h3>
+                                <p class="product-price"NA</p>
+                                <div class="product-meta">
+                                    <span class="status-badge status-warning">Low Stock</span>
+                                    <span class="stock-count">NA</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="action-button">
+                                        <i class="fas fa-edit"></i>
+                                        Edit
+                                    </button>
+                                    <button class="action-button-secondary">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-image">
+                                <img src="/api/placeholder/350/350" alt="AirPods Pro">
+                            </div>
+                            <div class="product-details">
+                                <h3>NA</h3>
+                                <p class="product-price">NA</p>
+                                <div class="product-meta">
+                                    <span class="status-badge status-inactive">Out of Stock</span>
+                                    <span class="stock-count">NA</span>
+                                </div>
+                                <div class="product-actions">
+                                    <button class="action-button">
+                                        <i class="fas fa-edit"></i>
+                                        Edit
+                                    </button>
+                                    <button class="action-button-secondary">
+                                        <i class="fas fa-trash"></i>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="table-footer">
+                        <div class="entries-info">
+                            Showing 1 to 3 of 248 products
+                        </div>
+                        <div class="pagination">
+                            <button class="page-button"><i class="fas fa-chevron-left"></i></button>
+                            <button class="page-button active">1</button>
+                            <button class="page-button">2</button>
+                            <button class="page-button">3</button>
+                            <span class="pagination-ellipsis">...</span>
+                            <button class="page-button">12</button>
+                            <button class="page-button"><i class="fas fa-chevron-right"></i></button>
+                        </div>
+                    </div>
+                </div>
+            </main>
 
         <script src="../js/admin-sidebar-scripts.js"></script>
     </body>

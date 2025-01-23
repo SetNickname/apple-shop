@@ -7,7 +7,7 @@
                 // root with your_database_username
                 // and replace_this_with_your_password as your_database_password
 
-                $conn = new PDO("mysql:host=localhost; dbname=test_db", "root", "replace_this_with_your_password");
+                $conn = new PDO("mysql:host=localhost; dbname=test_db", "root","");
                 return $conn;
 
             } catch (PDOException $e1) {
