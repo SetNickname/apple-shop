@@ -7,7 +7,7 @@
 
     <link rel="stylesheet" href="../css/style.css"> 
     <link rel="stylesheet" href="../css/order-navbars.css">
-    <link rel="stylesheet" href="../css/order-product.css">
+    <link rel="stylesheet" href="../css/user-account-setting.css">
     <link rel="icon" href="../assets/apple.png">
 </head>
 
@@ -54,9 +54,48 @@
         </aside>
         <main class="main-content">
             <h2 class="order-title">Account Setting</h2>
+
+            <form action="" class="user-form">
+                <div class="row">
+                    <div class="input-box fname">
+                        <input type="text" name="fname" id="fname" required disabled>
+                        <label>First Name</label>
+                    </div>
+                    <div class="input-box lname">
+                        <input type="text" name="lname" id="lname" required disabled>
+                        <label>Last Name</label>
+                    </div>
+                </div>
+                <div class="input-box email">
+                    <input type="email" name="email" id="email" required disabled>
+                    <label>Email</label>
+                </div>
+                <div class="input-box num">
+                    <input type="text" name="num" id="num" required disabled>
+                    <label>Mobile Number</label>
+                </div>
+                <div class="input-box password">
+                    <input type="password" name="pword" id="pword" required disabled>
+                    <label>Password</label>
+                </div>
+                <div class="input-box new-password">
+                    <input type="password" name="npword" id="npword" required disabled>
+                    <label>Confirm New Password</label>
+                </div>
+
+                <button class="edit-btn" id="edit-btn">
+                    Edit
+                </button>.
+                <div id="notification" class="hidden">
+                    <span>&#10004;</span> <!-- Check icon -->
+                    Changes Saved Successfully
+                </div>
+            </form>
+
         </main>
     </div>
 
     <script src="../js/order-navbar.js"></script>
+    <script src="../js/user-account-setting.js"></script>
 </body>
 </html>

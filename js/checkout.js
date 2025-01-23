@@ -43,7 +43,7 @@ document.getElementById('place-order-btn').addEventListener('click', function() 
     notification.classList.remove('hidden');
     notification.style.display = 'flex'; // Ensure notification is displayed
 
-    // Hide notification after 3 seconds and redirect to cart page
+    // Hide notification after 1 second and redirect to cart page
     setTimeout(function() {
         notification.classList.add('hidden');
         notification.style.display = 'none'; // Hide notification again
