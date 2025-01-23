@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const homeBtn = document.querySelector('.home-btn');
     const sideNavLinks = document.querySelectorAll('.side-nav-link');
     const logoutBtn = document.querySelector('.logout-btn');
+    const checkBtn = document.querySelector('.check-btn');
 
     homeBtn.addEventListener('click', (e) => {
         e.preventDefault();
@@ -33,6 +34,11 @@ document.addEventListener('DOMContentLoaded', () => {
     logoutBtn.addEventListener('click', (e) => {
         e.preventDefault();
         window.location.href = 'home-iphone.html';
+    });
+
+    checkBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.location.href = 'checkout.html';
     });
 
 });

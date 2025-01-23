@@ -1,0 +1,149 @@
+.cart-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    place-items: center;
+}
+
+.cart-card {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: var(--bg-white);
+    border: 1px solid var(--border-color);
+    border-radius: 12px;
+    padding: 20px 15px 20px 25px;
+    width: 100%;
+}
+
+.cart-card:hover {
+    cursor: pointer;
+    color: var(--text-secondary);
+    background-color: var(--hover-gray);
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    width: 20px;
+    height: 20px;
+    border: 2px solid var(--border-color);
+    border-radius: 6px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Create the checkmark using ::before pseudo-element */
+input[type="checkbox"]::before {
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 3px;
+    transform: scale(0);
+    transition: all 0.3s ease;
+    background-color: var(--text-primary);
+}
+
+/* When checkbox is checked */
+input[type="checkbox"]:checked {
+    border-color: var(--text-primary);
+}
+
+input[type="checkbox"]:checked::before {
+    transform: scale(1);
+}
+
+/* Hover state */
+input[type="checkbox"]:hover {
+    border-color: var(--text-primary);
+}
+
+.cprod-info {
+    display: flex;
+    align-items: center;
+    flex: 1; 
+    max-width: 60%;
+}
+
+.cprod-info img{
+    width: 80px;
+    margin-right: 20px;
+}
+
+.cprod-name{
+    margin-top: 0;
+    font-size: 25px;
+    font-weight: bold;
+    line-height: 30px;
+    margin-bottom: 12px;
+}
+
+.cprod-variation{
+    font-size: 12px;
+    line-height: 5px;
+    margin-bottom: 18px;
+}
+
+.cprod-price {
+    width: 100px;  /* Fixed width for price */
+    text-align: right;
+}
+
+.qty {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 120px;  /* Fixed width for quantity controls */
+    justify-content: center;  /* Centers the quantity controls */
+}
+
+.qty button {
+    width: 24px;
+    height: 24px;
+    border: 1px solid var(--border-color);
+    background: transparent;
+    border-radius: 50%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.qty button:hover {
+    background-color: var(--hover-gray);
+}
+
+.qty button:active {
+    transform: scale(0.95);
+}
+
+.qtyval {
+    min-width: 20px;
+    text-align: center;
+}
+
+.check-btn {
+    width: 100px;
+    margin: 18px auto 0;
+    height: 50px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 1px solid var(--black);
+    border-radius: 20px;
+
+    text-decoration: none;
+    color: inherit
+}
+.check-btn:hover {
+    color: var(--bg-white);
+    background-color: var(--black);
+    font-weight: bold;
+}
