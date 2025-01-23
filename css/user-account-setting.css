@@ -45,7 +45,7 @@
     color: var(--text-primary);
     padding: 0 35px 0 5px;
 }
-.fname, .lname{
+.fname, .lname, .uname, .email{
     width: 100%;
 }
 
