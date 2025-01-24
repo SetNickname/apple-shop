@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     homeBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'home-iphone.html';
+        window.location.href = './home/home-iphone.php';
     });
 
     sideNavLinks.forEach(link => {
@@ -17,13 +17,13 @@ document.addEventListener('DOMContentLoaded', () => {
           
           switch(linkText) {
               case 'Orders':
-                  window.location.href = 'pay.html';
+                  window.location.href = 'pay.php';
                   break;
               case 'Cart':
-                  window.location.href = 'cart.html';
+                  window.location.href = 'cart.php';
                   break;
               case 'Account':
-                  window.location.href = 'user-account-setting.html';
+                  window.location.href = 'user-account-setting.php';
                   break;
               default:
                   alert('No navigation defined for this link');
@@ -33,12 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     logoutBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'home-iphone.html';
+        window.location.href = './home/home-iphone.php';
     });
 
     checkBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'checkout.html';
+        window.location.href = 'checkout.php';
     });
 
 });
@@ -55,22 +55,22 @@ document.addEventListener('DOMContentLoaded', () => {
             
             switch(linkText) {
                 case 'To Pay':
-                    window.location.href = 'pay.html';
+                    window.location.href = 'pay.php';
                     break;
                 case 'To Ship':
-                    window.location.href = 'ship.html';
+                    window.location.href = 'ship.php';
                     break;
                 case 'To Receive':
-                    window.location.href = 'receive.html';
+                    window.location.href = 'receive.php';
                     break;
                 case 'Completed':
-                    window.location.href = 'completed.html';
+                    window.location.href = 'completed.php';
                     break;
                 case 'Return/Refund':
-                    window.location.href = 'return.html';
+                    window.location.href = 'return.php';
                     break;
                 case 'Cancelled':
-                    window.location.href = 'cancel.html';
+                    window.location.href = 'cancel.php';
                     break;
                 default:
                     alert('No navigation defined for this link');

@@ -5,12 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Checkout</title>
 
-    <link rel="icon" href="/assets/apple.png">
-    <link rel="stylesheet" href="/user/checkout-product.css">
-    <link rel="stylesheet" href="/admin/style.css">
+    <link rel="icon" href="../assets/apple.png">
+    <link rel="stylesheet" href="./checkout-product.css">
+    <link rel="stylesheet" href="../admin/style.css">
 
 </head>
 <body>
+    <?php 
+        //links
+        $checkout = "./checkout.js";
+
+    ?>
     <div class="header">
         <h2 class="order-title">Checkout</h2>
         <a href="#" class="close-btn" id="close-order-btn">
@@ -58,7 +63,7 @@
                 <h3>Payment Method</h3>
                 <div class="payment-methods" id="cod-btn">
                     <button class="payment-button active">
-                        <img src="/assets/cash.png" alt="">
+                        <img src="../assets/cash.png" alt="">
                         COD
                     </button>
                     <button class="payment-button" id="card-btn">
@@ -126,7 +131,7 @@
                             <div class="cart-prod-info-grid">
                                 <div class="cart-prod-icon">
                                     <img class="cart-prod-pic" 
-                                    src="/assets/prod11.png">
+                                    src="../assets/prod11.png">
                                 </div>
         
                                 <div class="cart-prod-info">
@@ -165,6 +170,6 @@
         Order Placed!
     </div>
 
-    <script src="/user/checkout.js"></script>
+    <script src="<?php echo $checkout; ?>"></script>
 </body>
 </html>

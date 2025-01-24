@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Orders | Cancelled</title>
+        <link rel="stylesheet" href="../admin/style.css"> 
+        <link rel="stylesheet" href="./order-navbars.css">
+        <link rel="stylesheet" href="./order-product.css">
+        <link rel="icon" href="../assets/apple.png">
+    </head>
+    <body>
+        <?php 
+            //links
+            $order_navbar = "./order-navbar.js";
+        ?>
+        <div class="orders">
+            <aside class="sidebar">
+                <div class="sidebar-header">
+                    <a href="#" class="home-btn">
+                        <img src="../assets/apple.png" alt="apple logo" width="30" height="30">
+                        <h1>Home</h1>
+                    </a>
+                </div>
+                <ul class="side-nav-menu">
+                    <li class="side-nav-item" id="Orders">
+                        <a href="# " class="side-nav-link active"> 
+                            <img src="../assets/box.png" alt="box logo">
+                            Orders
+                        </a>
+                    </li>
+                    <li class="side-nav-item" id="Cart">
+                        <a href="#" class="side-nav-link ">
+                            <img src="../assets/bag.png" alt="bag logo">
+                            Cart
+                        </a>
+                    </li>
+                    <li class="side-nav-item" id="Account">
+                        <a href="#" class="side-nav-link">
+                            <img src="../assets/account.png" alt="account logo">
+                            Account
+                        </a>
+                    </li>
+                </ul>
+                <div class="sidebar-footer">
+                    <div class="user-profile">
+                        <div class="user-details">
+                            <div class="user-name">User</div>
+                            <div class="user-email">user@gmail.com</div>
+                        </div>
+                        <a href="#" class="logout-btn">
+                            <img src="../assets/log out.png" alt="log-out logo" width="20" height="20">
+                        </a>
+                    </div>
+                </div>
+            </aside>
+
+            <main class="main-content">
+                <h2 class="order-title">Orders</h2>
+
+                <nav class="main-nav-bar">
+                    <ul>
+                        <li class="main-nav-item">
+                            <a href="#" class="main-nav-link">
+                                <img src="../assets/pay.png" alt="pay logo">    
+                                To Pay
+                            </a>
+                        </li>
+                        <li class="main-nav-item">
+                            <a href="#" class="main-nav-link">
+                                <img src="../assets/ship.png" alt="pay logo">    
+                                To Ship
+                            </a>
+                        </li>
+                        <li class="main-nav-item">
+                            <a href="#" class="main-nav-link">
+                                <img src="../assets/receive.png" alt="pay logo">    
+                                To Receive
+                            </a>
+                        </li>
+                        <li class="main-nav-item">
+                            <a href="#" class="main-nav-link">
+                                <img src="../assets/complete.png" alt="pay logo">    
+                                Completed
+                            </a>
+                        </li>
+                        <li class="main-nav-item">
+                            <a href="#" class="main-nav-link">
+                                <img src="../assets/return.png" alt="pay logo">    
+                                Return/Refund
+                            </a>
+                        </li>
+                        <li class="main-nav-item">
+                            <a href="#" class="main-nav-link active">
+                                <img src="../assets/cancel.png" alt="ship logo">
+                                Cancelled
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="prod-info-grid">
+                            <div class="prod-icon">
+                                <img class="prod-pic" 
+                                    src="../assets/prod8.png">
+                            </div>
+                            <div class="prod-info">
+                                <div class="prod-status">
+                                    Cancel
+                                </div>
+                                <div class="prod-name">iPhone SE</div>
+                                <div class="prod-variation">Black &#183; 128GB</div>
+                                <div class="prod-price">$479.00</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="prod-info-grid">
+                            <div class="prod-icon">
+                                <img class="prod-pic" 
+                                    src="../assets/prod9.png">
+                            </div>
+                            <div class="prod-info">
+                                <div class="prod-status">
+                                    Cancel
+                                </div>
+                                <div class="prod-name">Magic Keyboard with Touch ID and Numeric Keypad for Mac models with Apple silicon (USB–C)</div>
+                                <div class="prod-variation">US English &#183; Black Keys</div>
+                                <div class="prod-price">$199.00</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+
+        <script src="<?php echo $order_navbar; ?>"></script>
+    </body>
+</html>
