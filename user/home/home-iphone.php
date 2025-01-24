@@ -3,13 +3,18 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Apple | AirPods</title>
-        <link rel="stylesheet" href="/admin/style.css">
-        <link rel="stylesheet" href="/user/user.css">
-        <link rel="stylesheet" href="/user/account-container-hidden.css">
-        <link rel="icon" href="/assets/apple.png">
+        <title>Apple | iPhone</title>
+        <link rel="stylesheet" href="../admin/style.css">
+        <link rel="stylesheet" href="../user.css">
+        <link rel="stylesheet" href="../account-container-hidden.css">
+        <link rel="icon" href="../../assets/apple.png">
     </head>
     <body>
+        <?php 
+            //links
+            $user_navbar_script = "../user-navbar-scripts.js";
+            $hide_show_bag = "../hide-show-bag.js";
+        ?>
         <div class="bag-container">
             <header>
                 <h2 class="header-text">Your Bag is empty</h2>
@@ -19,15 +24,15 @@
                 <nav class="bag-nav-link">
                     <ul>
                         <li>
-                            <img src="/assets/box.png" alt="order icon" class="logo-size">
+                            <img src="../../assets/box.png" alt="order icon" class="logo-size">
                             <a href="#">Orders</a>
                         </li>
                         <li>
-                            <img src="/assets/bag.png" alt="cart icon" class="logo-size">
+                            <img src="../../assets/bag.png" alt="cart icon" class="logo-size">
                             <a href="#">Cart</a>
                         </li>
                         <li>
-                            <img src="/assets/account.png" alt="account icon" class="logo-size">
+                            <img src="../../assets/account.png" alt="account icon" class="logo-size">
                             <a href="#">Account</a>
                         </li>
                     </ul>
@@ -35,19 +40,18 @@
                 <a href="#" class="back-btn" id="hide-bag-btn">BACK</a>
             </section>
         </div>
-        <!-- blur this body when container is shown -->
         <div id="target-body">
             <header>
                 <div class="home-link logo-hover">
-                    <img src="/assets/apple.png" alt="apple logo" class="logo-size">
+                    <img src="../../assets/apple.png" alt="apple logo" class="logo-size">
                 </div>
                 <nav class="navigation-bar">
                     <ul>
                         <li>
-                            <a href="#" class="nav-link active">AirPods</a>
+                            <a href="#" class="nav-link">AirPods</a>
                         </li>
                         <li>
-                            <a href="#" class="nav-link">iPhone</a>
+                            <a href="#" class="nav-link active">iPhone</a>
                         </li>
                         <li>
                             <a href="#" class="nav-link">Accessories</a>
@@ -55,16 +59,19 @@
                     </ul>
                 </nav>
                 <div class="cart-link logo-hover">
-                    <img src="/assets/bag.png" alt="cart bag" class="logo-size" id="show-bag-btn">
+                    <img src="../../assets/bag.png" alt="cart bag" class="logo-size" id="show-bag-btn">
                 </div>
             </header>
             <main>
                 <section class="main-hero">
-                    <img class="hero-img" src="/assets/hero.png" alt="airpods pro 2">
+                    <img class="hero-img iphone-img" src="../../assets/iphone-home.png" alt="airpods pro 2">
                 </section>
                 <section class="description-text">
-                    <h2 class="h2-bold">Five fresh colors. Bold sound</h2>
-                    <h3 class="h3-text">$549</h3>
+                    <h2 class="h2-bold large-text">Designed to be loved.</h2>
+                    <p class="h3-text small-text">
+                        Get $180–$650 in credit toward iPhone 16 or iPhone 16 Pro <br> 
+                        when you trade in iPhone 12 or higher.
+                    </p>
                 </section>
                 <section class="buy-section">
                     <div class="center-btn">
@@ -76,7 +83,7 @@
                 </section>
             </main>
         </div>
-        <script src="/user/user-navbar-scripts.js"></script>
-        <script src="/user/hide-show-bag.js"></script>
+        <script src="<?php echo $user_navbar_script; ?>"></script>
+        <script src="<?php echo $hide_show_bag; ?>"></script>
     </body>
 </html>

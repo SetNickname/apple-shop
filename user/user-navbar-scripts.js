@@ -2,13 +2,14 @@ document.addEventListener('DOMContentLoaded', () => {
     // Navigation mapping object
     const navigationPaths = {
         // Main nav links
-        'AirPods': 'home-airpods.html',
-        'iPhone': 'home-iphone.html',
-        'Accessories': 'home-accessories.html',
+        'AirPods': 'home-airpods.php',
+        'iPhone': 'home-iphone.php',
+        'Accessories': 'home-accessories.php',
+
         // Bag nav links
-        'Orders': '/user/pay.html',
-        'Cart': '/user/cart.html',
-        'Account': '/user/user-account-setting.html'
+        'Orders': '../pay.php',
+        'Cart': '../cart.php',
+        'Account': '../user-account-setting.php'
     };
 
     // Select all navigation links at once
