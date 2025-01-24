@@ -5,37 +5,42 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Setting</title>
 
-    <link rel="stylesheet" href="/admin/style.css"> 
-    <link rel="stylesheet" href="/user/order-navbars.css">
-    <link rel="stylesheet" href="/user/user-account-setting.css">
-    <link rel="icon" href="/assets/apple.png">
+    <link rel="stylesheet" href="../admin/style.css"> 
+    <link rel="stylesheet" href="./order-navbars.css">
+    <link rel="stylesheet" href="./user-account-setting.css">
+    <link rel="icon" href="../assets/apple.png">
 </head>
-
 <body>
+    <?php 
+        //links
+        $order_navbar = "./order-navbar.js";
+        $user_account_setting = "./user-account-setting.js";
+
+    ?>
     <div class="orders">
         <aside class="sidebar">
             <div class="sidebar-header">
                 <a href="#" class="home-btn" id="home">
-                    <img src="/assets/apple.png" alt="apple logo" width="30" height="30">
+                    <img src="../assets/apple.png" alt="apple logo" width="30" height="30">
                     <h1>Home</h1>
                 </a>
             </div>
             <ul class="side-nav-menu">
                 <li class="side-nav-item" id="Orders">
                     <a href="# " class="side-nav-link"> 
-                        <img src="/assets/box.png" alt="box logo">
+                        <img src="../assets/box.png" alt="box logo">
                         Orders
                     </a>
                 </li>
                 <li class="side-nav-item" id="Cart">
                     <a href="#" class="side-nav-link ">
-                        <img src="/assets/bag.png" alt="bag logo">
+                        <img src="../assets/bag.png" alt="bag logo">
                         Cart
                     </a>
                 </li>
                 <li class="side-nav-item" id="Account">
                     <a href="#" class="side-nav-link active">
-                        <img src="/assets/account.png" alt="account logo">
+                        <img src="../assets/account.png" alt="account logo">
                         Account
                     </a>
                 </li>
@@ -47,7 +52,7 @@
                         <div class="user-email">user@gmail.com</div>
                     </div>
                     <a href="#" class="logout-btn" id="log-out">
-                        <img src="/assets/log out.png" alt="log-out logo" width="20" height="20">
+                        <img src="../assets/log out.png" alt="log-out logo" width="20" height="20">
                     </a>
                 </div>
             </div>
@@ -101,7 +106,7 @@
         </main>
     </div>
 
-    <script src="/user/order-navbar.js"></script>
-    <script src="/user/user-account-setting.js"></script>
+    <script src="<?php echo $order_navbar; ?>"></script>
+    <script src="<?php echo $user_account_setting; ?>"></script>
 </body>
 </html>
