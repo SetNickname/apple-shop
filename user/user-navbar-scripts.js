@@ -6,9 +6,9 @@ document.addEventListener('DOMContentLoaded', () => {
         'iPhone': 'home-iphone.html',
         'Accessories': 'home-accessories.html',
         // Bag nav links
-        'Orders': 'pay.html',
-        'Cart': 'cart.html',
-        'Account': 'user-account-setting.html'
+        'Orders': '/user/pay.html',
+        'Cart': '/user/cart.html',
+        'Account': '/user/user-account-setting.html'
     };
 
     // Select all navigation links at once
