@@ -11,6 +11,15 @@
     <link rel="stylesheet" href="./settings.css">
 </head>
 <body>
+    <?php 
+        //links
+        $admin_sidebar_script = "./admin-sidebar-scripts.js";
+        $settings_js = "./settings.js";
+        $settings_tab = "./settings-tab.js";
+
+
+    
+    ?>
     <div class="settings">
         <aside class="sidebar">
             <div class="sidebar-header">
@@ -210,9 +219,9 @@
             </div>
         </main>
     </div>
- <script src="./settings.js"></script>
- <script src="./admin-sidebar-scripts.js"></script>
- <script src="./settings-tab.js"></script>
+ <script src="<?php echo $settings_js; ?>"></script>
+ <script src="<?php echo $admin_sidebar_script; ?>"></script>
+ <script src="<?php echo $settings_tab; ?>"></script>
  
 </body>
 </html>

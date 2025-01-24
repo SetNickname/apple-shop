@@ -10,8 +10,14 @@
     <link rel="stylesheet" href="./sidebar.css">
     <link rel="stylesheet" href="./dashboard.css">
 </head>
-
 <body>
+    <?php 
+        //links 
+        $admin_sidebar_script = "./admin-sidebar-scripts.js";
+        $dashboard = "./dashboard.js";
+    
+    
+    ?>
     <div class="dashboard">
 
         <aside class="sidebar">
@@ -22,6 +28,7 @@
                 <h1>Username</h1>
             </div>
 
+            <!-- fix broken links # on js -->
             <ul class="nav-menu">
                 <li class="nav-item" id="Dashboard">
                     <a href="#" class="nav-link active">
@@ -132,7 +139,7 @@
         </main>
     </div>
 
-    <script src="./admin-sidebar-scripts.js"></script>
-    <script src="./dashboard.js"></script>
+    <script src="<?php echo $admin_sidebar_script; ?>"></script>
+    <script src="<?php echo $dashboard; ?>"></script>
 </body>
 </html>
