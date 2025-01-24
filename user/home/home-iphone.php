@@ -2,18 +2,18 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-            <meta name="viewport" content="width=device-width, initial-scale=1.0">
-            <title>Apple | iPhone</title>
-            <link rel="stylesheet" href="/admin/style.css">
-            <link rel="stylesheet" href="/user/user.css">
-            <link rel="stylesheet" href="/user/account-container-hidden.css">
-            <link rel="icon" href="/assets/apple.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Apple | iPhone</title>
+        <link rel="stylesheet" href="../admin/style.css">
+        <link rel="stylesheet" href="../user.css">
+        <link rel="stylesheet" href="../account-container-hidden.css">
+        <link rel="icon" href="../../assets/apple.png">
     </head>
     <body>
         <?php 
             //links
-            $user_navbar_script = "/user/user-navbar-scripts.js";
-            $hide_show_bag = "/user/hide-show-bag.js";
+            $user_navbar_script = "../user-navbar-scripts.js";
+            $hide_show_bag = "../hide-show-bag.js";
         ?>
         <div class="bag-container">
             <header>
@@ -24,15 +24,15 @@
                 <nav class="bag-nav-link">
                     <ul>
                         <li>
-                            <img src="/assets/box.png" alt="order icon" class="logo-size">
+                            <img src="../../assets/box.png" alt="order icon" class="logo-size">
                             <a href="#">Orders</a>
                         </li>
                         <li>
-                            <img src="/assets/bag.png" alt="cart icon" class="logo-size">
+                            <img src="../../assets/bag.png" alt="cart icon" class="logo-size">
                             <a href="#">Cart</a>
                         </li>
                         <li>
-                            <img src="/assets/account.png" alt="account icon" class="logo-size">
+                            <img src="../../assets/account.png" alt="account icon" class="logo-size">
                             <a href="#">Account</a>
                         </li>
                     </ul>
@@ -43,7 +43,7 @@
         <div id="target-body">
             <header>
                 <div class="home-link logo-hover">
-                    <img src="/assets/apple.png" alt="apple logo" class="logo-size">
+                    <img src="../../assets/apple.png" alt="apple logo" class="logo-size">
                 </div>
                 <nav class="navigation-bar">
                     <ul>
@@ -59,12 +59,12 @@
                     </ul>
                 </nav>
                 <div class="cart-link logo-hover">
-                    <img src="/assets/bag.png" alt="cart bag" class="logo-size" id="show-bag-btn">
+                    <img src="../../assets/bag.png" alt="cart bag" class="logo-size" id="show-bag-btn">
                 </div>
             </header>
             <main>
                 <section class="main-hero">
-                    <img class="hero-img iphone-img" src="/assets/iphone-home.png" alt="airpods pro 2">
+                    <img class="hero-img iphone-img" src="../../assets/iphone-home.png" alt="airpods pro 2">
                 </section>
                 <section class="description-text">
                     <h2 class="h2-bold large-text">Designed to be loved.</h2>
