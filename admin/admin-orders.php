@@ -11,8 +11,13 @@
     <link rel="stylesheet" href="./orders.css">
         <title>Orders</title>
     </head>
-
     <body>
+        <?php 
+            //links
+            $admin_sidebar_script = "./admin-sidebar-scripts.js";
+        
+        
+        ?>
         <div class="orders">
 
             <aside class="sidebar">
@@ -215,6 +220,6 @@
                 </div>
             </main>
 
-        <script src="./admin-sidebar-scripts.js"></script>
+        <script src="<?php echo $admin_sidebar_script; ?>"></script>
     </body>
 </html>
