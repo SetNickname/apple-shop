@@ -10,19 +10,19 @@ document.addEventListener('DOMContentLoaded', () => {
           
           switch(linkText) {
               case 'Dashboard':
-                  window.location.href = 'admin-dashboard.html';
+                  window.location.href = 'admin-dashboard.php';
                   break;
               case 'Orders':
-                  window.location.href = 'admin-orders.html';
+                  window.location.href = 'admin-orders.php';
                   break;
               case 'Products':
-                  window.location.href = 'admin-products.html';
+                  window.location.href = 'admin-products.php';
                   break;
               case 'Customers':
-                window.location.href = 'admin-customers.html';
+                window.location.href = 'admin-customers.php';
                 break;
               case 'Reviews':
-                window.location.href = 'admin-reviews.html';
+                window.location.href = 'admin-reviews.php';
                 break;
               default:
                   alert('No navigation defined for this link');
@@ -31,7 +31,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     profilePicture.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'admin-settings.html';
+        window.location.href = 'admin-settings.php';
     });
 
 });
