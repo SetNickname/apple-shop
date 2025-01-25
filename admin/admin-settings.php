@@ -6,11 +6,20 @@
     <title>Admin Settings</title>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="../css/style.css">
-    <link rel="stylesheet" href="../css/sidebar.css">
-    <link rel="stylesheet" href="../css/settings.css">
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./sidebar.css">
+    <link rel="stylesheet" href="./settings.css">
 </head>
 <body>
+    <?php 
+        //links
+        $admin_sidebar_script = "./admin-sidebar-scripts.js";
+        $settings_js = "./settings.js";
+        $settings_tab = "./settings-tab.js";
+
+
+    
+    ?>
     <div class="settings">
         <aside class="sidebar">
             <div class="sidebar-header">
@@ -198,9 +207,9 @@
             </div>
         </main>
     </div>
- <script src="../js/settings.js"></script>
- <script src="../js/admin-sidebar-scripts.js"></script>
- <script src="../js/settings-tab.js"></script>
+ <script src="<?php echo $settings_js; ?>"></script>
+ <script src="<?php echo $admin_sidebar_script; ?>"></script>
+ <script src="<?php echo $settings_tab; ?>"></script>
  
 </body>
 </html>

@@ -5,13 +5,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Account Setting</title>
 
-    <link rel="stylesheet" href="../css/style.css"> 
-    <link rel="stylesheet" href="../css/order-navbars.css">
-    <link rel="stylesheet" href="../css/user-account-setting.css">
+    <link rel="stylesheet" href="../admin/style.css"> 
+    <link rel="stylesheet" href="./order-navbars.css">
+    <link rel="stylesheet" href="./user-account-setting.css">
     <link rel="icon" href="../assets/apple.png">
 </head>
-
 <body>
+    <?php 
+        //links
+        $order_navbar = "./order-navbar.js";
+        $user_account_setting = "./user-account-setting.js";
+
+    ?>
     <div class="orders">
         <aside class="sidebar">
             <div class="sidebar-header">
@@ -101,7 +106,7 @@
         </main>
     </div>
 
-    <script src="../js/order-navbar.js"></script>
-    <script src="../js/user-account-setting.js"></script>
+    <script src="<?php echo $order_navbar; ?>"></script>
+    <script src="<?php echo $user_account_setting; ?>"></script>
 </body>
 </html>

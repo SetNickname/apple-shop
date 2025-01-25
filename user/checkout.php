@@ -6,11 +6,16 @@
     <title>Checkout</title>
 
     <link rel="icon" href="../assets/apple.png">
-    <link rel="stylesheet" href="../css/checkout-product.css">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="./checkout-product.css">
+    <link rel="stylesheet" href="../admin/style.css">
 
 </head>
 <body>
+    <?php 
+        //links
+        $checkout = "./checkout.js";
+
+    ?>
     <div class="header">
         <h2 class="order-title">Checkout</h2>
         <a href="#" class="close-btn" id="close-order-btn">
@@ -165,6 +170,6 @@
         Order Placed!
     </div>
 
-    <script src="../js/checkout.js"></script>
+    <script src="<?php echo $checkout; ?>"></script>
 </body>
 </html>

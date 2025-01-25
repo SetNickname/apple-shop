@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orders | To Receive</title>
+    <title>Orders | To Pay</title>
 
-    <link rel="stylesheet" href="../css/style.css"> 
-    <link rel="stylesheet" href="../css/order-navbars.css">
-    <link rel="stylesheet" href="../css/order-product.css">
+    <link rel="stylesheet" href="../admin/style.css"> 
+    <link rel="stylesheet" href="./order-navbars.css">
+    <link rel="stylesheet" href="./order-product.css">
     <link rel="icon" href="../assets/apple.png">
 </head>
-
 <body>
+    <?php 
+        //links
+        $order_navbar = "./order-navbar.js";
+    ?>
     <div class="orders">
         <aside class="sidebar">
             <div class="sidebar-header">
@@ -58,7 +61,7 @@
             <nav class="main-nav-bar">
                 <ul>
                     <li class="main-nav-item">
-                        <a href="#" class="main-nav-link">
+                        <a href="#" class="main-nav-link active">
                             <img src="../assets/pay.png" alt="pay logo">    
                             To Pay
                         </a>
@@ -70,7 +73,7 @@
                         </a>
                     </li>
                     <li class="main-nav-item">
-                        <a href="#" class="main-nav-link active">
+                        <a href="#" class="main-nav-link">
                             <img src="../assets/receive.png" alt="pay logo">    
                             To Receive
                         </a>
@@ -100,16 +103,16 @@
                     <div class="prod-info-grid">
                         <div class="prod-icon">
                             <img class="prod-pic" 
-                                src="../assets/prod3.png">
+                                src="../assets/prod1.png">
                         </div>
 
                         <div class="prod-info">
                             <div class="prod-status">
-                                Out for delivery
+                                Waiting for approval
                             </div>
-                            <div class="prod-name">AirPods Max</div>
-                            <div class="prod-variation">Purple &#183; KST</div>
-                            <div class="prod-price">$549.00</div>
+                            <div class="prod-name">iPhone 16 Pro</div>
+                            <div class="prod-variation">Natural Titanium &#183; 512GB</div>
+                            <div class="prod-price">$1299.00</div>
                         </div>
                     </div>
                 </div>
@@ -117,6 +120,6 @@
         </main>
     </div>
 
-    <script src="../js/order-navbar.js"></script>
+    <script src="<?php echo $order_navbar; ?>"></script>
 </body>
 </html>

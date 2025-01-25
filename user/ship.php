@@ -3,15 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orders | Cancelled</title>
+    <title>Orders | To Ship</title>
 
-    <link rel="stylesheet" href="../css/style.css"> 
-    <link rel="stylesheet" href="../css/order-navbars.css">
-    <link rel="stylesheet" href="../css/order-product.css">
+    <link rel="stylesheet" href="../admin/style.css"> 
+    <link rel="stylesheet" href="./order-navbars.css">
+    <link rel="stylesheet" href="./order-product.css">
     <link rel="icon" href="../assets/apple.png">
 </head>
-
 <body>
+    <?php 
+        //links
+        $order_navbar = "./order-navbar.js";
+
+
+
+
+    ?>
     <div class="orders">
         <aside class="sidebar">
             <div class="sidebar-header">
@@ -65,7 +72,7 @@
                         </a>
                     </li>
                     <li class="main-nav-item">
-                        <a href="#" class="main-nav-link">
+                        <a href="#" class="main-nav-link active">
                             <img src="../assets/ship.png" alt="pay logo">    
                             To Ship
                         </a>
@@ -89,7 +96,7 @@
                         </a>
                     </li>
                     <li class="main-nav-item">
-                        <a href="#" class="main-nav-link active">
+                        <a href="#" class="main-nav-link">
                             <img src="../assets/cancel.png" alt="ship logo">
                             Cancelled
                         </a>
@@ -102,32 +109,16 @@
                     <div class="prod-info-grid">
                         <div class="prod-icon">
                             <img class="prod-pic" 
-                                src="../assets/prod8.png">
+                                src="../assets/prod2.png">
                         </div>
-                        <div class="prod-info">
-                            <div class="prod-status">
-                                Cancel
-                            </div>
-                            <div class="prod-name">iPhone SE</div>
-                            <div class="prod-variation">Black &#183; 128GB</div>
-                            <div class="prod-price">$479.00</div>
-                        </div>
-                    </div>
-                </div>
 
-                <div class="product-card">
-                    <div class="prod-info-grid">
-                        <div class="prod-icon">
-                            <img class="prod-pic" 
-                                src="../assets/prod9.png">
-                        </div>
                         <div class="prod-info">
                             <div class="prod-status">
-                                Cancel
+                                In-transit
                             </div>
-                            <div class="prod-name">Magic Keyboard with Touch ID and Numeric Keypad for Mac models with Apple silicon (USB–C)</div>
-                            <div class="prod-variation">US English &#183; Black Keys</div>
-                            <div class="prod-price">$199.00</div>
+                            <div class="prod-name">iPhone 16 Pro Clear Case with MagSafe</div>
+                            <div class="prod-variation">iPhone 16 Pro</div>
+                            <div class="prod-price">$49.00</div>
                         </div>
                     </div>
                 </div>
@@ -135,6 +126,6 @@
         </main>
     </div>
 
-    <script src="../js/order-navbar.js"></script>
+    <script src="<?php echo $order_navbar; ?>"></script>
 </body>
 </html>

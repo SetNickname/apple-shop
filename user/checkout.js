@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeBtn = document.querySelector('.close-btn');
     closeBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = 'cart.html';
+        window.location.href = 'cart.php';
     });
 
 });
@@ -47,7 +47,7 @@ document.getElementById('place-order-btn').addEventListener('click', function() 
     setTimeout(function() {
         notification.classList.add('hidden');
         notification.style.display = 'none'; // Hide notification again
-        window.location.href = 'cart.html'; // Redirect to the cart page
+        window.location.href = 'cart.php'; // Redirect to the cart page
     }, 1000);
 });
 

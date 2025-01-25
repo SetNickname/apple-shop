@@ -3,15 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Orders | To Ship</title>
+    <title>Orders | To Return</title>
 
-    <link rel="stylesheet" href="../css/style.css"> 
-    <link rel="stylesheet" href="../css/order-navbars.css">
-    <link rel="stylesheet" href="../css/order-product.css">
+    <link rel="stylesheet" href="../admin/style.css"> 
+    <link rel="stylesheet" href="./order-navbars.css">
+    <link rel="stylesheet" href="./order-product.css">
     <link rel="icon" href="../assets/apple.png">
 </head>
-
 <body>
+    <?php
+        //links
+        $order_navbar = "./order-navbar.js";
+
+
+
+    ?>
     <div class="orders">
         <aside class="sidebar">
             <div class="sidebar-header">
@@ -52,7 +58,7 @@
                 </div>
             </div>
         </aside>
-
+        
         <main class="main-content">
             <h2 class="order-title">Orders</h2>
 
@@ -65,7 +71,7 @@
                         </a>
                     </li>
                     <li class="main-nav-item">
-                        <a href="#" class="main-nav-link active">
+                        <a href="#" class="main-nav-link">
                             <img src="../assets/ship.png" alt="pay logo">    
                             To Ship
                         </a>
@@ -83,7 +89,7 @@
                         </a>
                     </li>
                     <li class="main-nav-item">
-                        <a href="#" class="main-nav-link">
+                        <a href="#" class="main-nav-link active">
                             <img src="../assets/return.png" alt="pay logo">    
                             Return/Refund
                         </a>
@@ -102,16 +108,33 @@
                     <div class="prod-info-grid">
                         <div class="prod-icon">
                             <img class="prod-pic" 
-                                src="../assets/prod2.png">
+                                src="../assets/prod6.png">
                         </div>
 
                         <div class="prod-info">
                             <div class="prod-status">
-                                In-transit
+                                Return
                             </div>
-                            <div class="prod-name">iPhone 16 Pro Clear Case with MagSafe</div>
-                            <div class="prod-variation">iPhone 16 Pro</div>
+                            <div class="prod-name">Sport Band - M/L</div>
+                            <div class="prod-variation">46mm &#183; Plum</div>
                             <div class="prod-price">$49.00</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="product-card">
+                    <div class="prod-info-grid">
+                        <div class="prod-icon">
+                            <img class="prod-pic" 
+                                src="../assets/prod7.png">
+                        </div>
+
+                        <div class="prod-info">
+                            <div class="prod-status">
+                                Return
+                            </div>
+                            <div class="prod-name">AirPods 4</div>
+                            <div class="prod-variation">with Active Noise Cancellation &#183; No Engraving</div>
+                            <div class="prod-price">$179.00</div>
                         </div>
                     </div>
                 </div>
@@ -119,6 +142,6 @@
         </main>
     </div>
 
-    <script src="../js/order-navbar.js"></script>
+    <script src="<?php echo $order_navbar; ?>"></script>
 </body>
 </html>
