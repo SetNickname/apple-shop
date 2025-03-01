@@ -17,7 +17,7 @@
             $fname = $_POST['fname'];
             $lname = $_POST['lname'];
             $username = $_POST['username'];
-            $phonenum = $_POST['phonenum'];
+            $phonenum = strval($_POST['phonenum']);
             $email = $_POST['email'];
             $password = $_POST['password'];
             $confpassword = $_POST['confpassword'];
@@ -67,7 +67,7 @@
                     <input class="half space-margin" type="text" name="lname" placeholder="Last Name" required>
                 </div>
                 <input class="full space-margin" type="text" name="username" placeholder="Username" required>
-                <input class="full space-margin" type="number" name="phonenum" placeholder="Phone Number" required>
+                <input class="full space-margin" type="tel" name="phonenum" placeholder="Phone Number" required>
                 <input class="full space-margin" type="email" name="email" placeholder="Email" required>
                 <input class="full space-margin" type="password" name="password" placeholder="Password" required>
                 <input class="full space-margin" type="password" name="confpassword" placeholder="Confirm Password" required>
