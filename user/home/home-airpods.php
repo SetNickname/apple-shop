@@ -14,11 +14,22 @@
             //links
             $user_navbar_script = "../user-navbar-scripts.js";
             $hide_show_bag = "../hide-show-bag.js";
+
+            session_start(); 
+
+            if (isset($_SESSION['username'])) {
+                $username = $_SESSION['username'];
+                $firstname = $_SESSION['first_name'];
+
+            } else {
+                $firstname = "Guest";
+            }
+
         
         ?>
         <div class="bag-container">
             <header>
-                <h2 class="header-text">Your Bag is empty</h2>
+                <h2 class="header-text">Welcome, <?php echo htmlspecialchars($firstname); ?>!</h2>
             </header>
             <section class="profile-section">
                 <p class="profile-text">My Profile</p>
