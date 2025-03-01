@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Apple | iPhone</title>
-        <link rel="stylesheet" href="../admin/style.css">
+        <link rel="stylesheet" href="../../admin/style.css">
         <link rel="stylesheet" href="../user.css">
         <link rel="stylesheet" href="../account-container-hidden.css">
         <link rel="icon" href="../../assets/apple.png">
