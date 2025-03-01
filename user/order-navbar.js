@@ -33,7 +33,12 @@ document.addEventListener('DOMContentLoaded', () => {
 
     logoutBtn.addEventListener('click', (e) => {
         e.preventDefault();
-        window.location.href = './home/home-iphone.php';
+        if (confirm("Are you sure you want to logout?")) {
+            alert('Successfully Logged out')
+            window.location.href = '../logout.php';
+        } else {
+            // nothing happens
+        }
     });
 
     checkBtn.addEventListener('click', (e) => {
