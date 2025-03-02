@@ -40,6 +40,9 @@
             $stmt->execute();
             $totalRevenue = $stmt->fetch(PDO::FETCH_ASSOC)['total_revenue'] ?? 0;
 
+            // get selected status from the dropdown (default is empty = show all)
+            $filterStatus = isset($_GET['status']) ? $_GET['status'] : '';
+
             // Fetch all orders with corresponding product names
             $query = "
             SELECT 
@@ -50,12 +53,26 @@
                 o.amount, 
                 o.status 
             FROM Orders o
-            JOIN Products p ON o.product_id = p.product_id
-            ORDER BY o.order_id DESC";  // Latest orders first
+            JOIN Products p ON o.product_id = p.product_id";
+            
+            // apply filter if a status is selected
+            if (!empty($filterStatus)) {
+                $query .= " WHERE o.status = :status";
+            }
+
+            $query .= " ORDER BY o.order_id DESC";  // Latest orders first
 
             $stmt = $db->prepare($query);
+
+            // bind status if filter is applied
+            if (!empty($filterStatus)) {
+                $stmt->bindValue(':status', $filterStatus);
+            }
+
             $stmt->execute();
             $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+            
         
         ?>
         <div class="orders">
@@ -123,13 +140,21 @@
                     <div class="search-bar">
                         <input type="text" class="search-input" placeholder="Search orders...">
                         <div class="filter-group">
-                            <select class="filter-select">
+                            <!-- <select class="filter-select">
                                 <option value="">Status</option>
                                 <option value="completed">Completed</option>
                                 <option value="processing">Processing</option>
                                 <option value="pending">Pending</option>
                                 <option value="cancelled">Cancelled</option>
-                            </select>
+                            </select> -->
+                            <form method="GET">
+                                <select class="filter-select" name="status" onchange="this.form.submit()"> 
+                                    <option value="">All Status</option>
+                                    <option value="Completed" <?php echo ($filterStatus == 'Completed') ? 'selected' : ''; ?>>Completed</option>
+                                    <option value="Processing" <?php echo ($filterStatus == 'Processing') ? 'selected' : ''; ?>>Processing</option>
+                                    <option value="Cancelled" <?php echo ($filterStatus == 'Cancelled') ? 'selected' : ''; ?>>Cancelled</option>
+                                </select>
+                            </form>
                             <button class="action-button">
                                 <i class="fas fa-filter"></i>
                                 Filter
@@ -169,79 +194,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- comment out old codes -->
-                    <!-- <table class="data-table">
-                        <thead>
-                            <tr>
-                                <th>Order ID</th>
-                                <th>Customer</th>
-                                <th>Product</th>
-                                <th>Date</th>
-                                <th>Amount</th>
-                                <th>Status</th>
-                                <th>Actions</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>1</td>
-                                <td>John Doe</td>
-                                <td>NA</td>
-                                <td>NA</td>
-                                <td>$NA</td>
-                                <td><span class="status-badge status-active">Completed</span></td>
-                                <td>
-                                    <div class="action-group">
-                                        <button class="action-button">
-                                            <i class="fas fa-eye"></i>
-                                            View
-                                        </button>
-                                        <button class="action-button-secondary">
-                                            <i class="fas fa-download"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Jane Doe</td>
-                                <td>NA</td>
-                                <td>NA</td>
-                                <td>$NA</td>
-                                <td><span class="status-badge status-pending">Processing</span></td>
-                                <td>
-                                    <div class="action-group">
-                                        <button class="action-button">
-                                            <i class="fas fa-eye"></i>
-                                            View
-                                        </button>
-                                        <button class="action-button-secondary">
-                                            <i class="fas fa-download"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Jeremiah Springfield</td>
-                                <td>NA</td>
-                                <td>NA</td>
-                                <td>$NA</td>
-                                <td><span class="status-badge status-inactive">Cancelled</span></td>
-                                <td>
-                                    <div class="action-group">
-                                        <button class="action-button">
-                                            <i class="fas fa-eye"></i>
-                                            View
-                                        </button>
-                                        <button class="action-button-secondary">
-                                            <i class="fas fa-download"></i>
-                                        </button>
-                                    </div>
-                                </td>
-                            </tr>
-                        </tbody>
-                    </table> -->
                     <table class="data-table">
                         <thead>
                             <tr>
