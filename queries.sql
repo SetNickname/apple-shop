@@ -71,7 +71,7 @@ NSERT INTO Orders (cust_first_name, cust_last_name, product_id, order_date, amou
 ('Pau', 'Garcia', 3, '2025-03-04', 62990, 'Processing'),        -- iPhone 15 Plus
 ('Anecka', 'Lopez', 7, '2025-03-05', 9990, 'Completed'),        -- AirPods 4
 ('Lina', 'Fernandez', 12, '2025-03-06', 990, 'Processing'),     -- Lightning Cable
-('Rafael', 'Gonzales', 4, '2025-03-07', 68990, 'Cancelled'),    -- iPhone 16
+('Kurt', 'Gonzales', 4, '2025-03-07', 68990, 'Cancelled'),    -- iPhone 16
 ('Isabel', 'Torres', 9, '2025-03-08', 32990, 'Completed'),      -- AirPods Max
-('Miguel', 'Ramos', 6, '2025-03-09', 78990, 'Processing'),      -- iPhone 16 Pro
+('Eric', 'Ramos', 6, '2025-03-09', 78990, 'Processing'),      -- iPhone 16 Pro
 ('Catherine', 'Mendoza', 11, '2025-03-10', 1990, 'Completed');  -- Wireless Charger
