@@ -47,7 +47,7 @@
                             Products
                         </a>
                     </li>
-                    <li class="nav-item" id="Customers">
+                    <!-- <li class="nav-item" id="Customers">
                         <a href="#" class="nav-link">
                             <i class="fas fa-users"></i>
                             Customers
@@ -58,7 +58,7 @@
                             <i class="fa-regular fa-comment"></i>
                             Reviews
                         </a>
-                    </li>
+                    </li> -->
                 </ul>
     
                 <div class="sidebar-footer">
