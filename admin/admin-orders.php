@@ -15,7 +15,47 @@
         <?php 
             //links
             $admin_sidebar_script = "./admin-sidebar-scripts.js";
-        
+
+            require('../connection.php');
+
+            $db = userdata::connect();
+
+            // Total Orders (count all orders)
+            $stmt = $db->prepare("SELECT COUNT(*) AS total_orders FROM Orders");
+            $stmt->execute();
+            $totalOrders = $stmt->fetch(PDO::FETCH_ASSOC)['total_orders'] ?? 0;
+
+            // Completed Orders
+            $stmt = $db->prepare("SELECT COUNT(*) AS completed_orders FROM Orders WHERE status = 'Completed'");
+            $stmt->execute();
+            $completedOrders = $stmt->fetch(PDO::FETCH_ASSOC)['completed_orders'] ?? 0;
+
+            // Pending Orders
+            $stmt = $db->prepare("SELECT COUNT(*) AS pending_orders FROM Orders WHERE status = 'Processing'");
+            $stmt->execute();
+            $pendingOrders = $stmt->fetch(PDO::FETCH_ASSOC)['pending_orders'] ?? 0;
+
+            // Total Revenue (sum of completed + processing orders)
+            $stmt = $db->prepare("SELECT SUM(amount) AS total_revenue FROM Orders WHERE status IN ('Completed', 'Processing')");
+            $stmt->execute();
+            $totalRevenue = $stmt->fetch(PDO::FETCH_ASSOC)['total_revenue'] ?? 0;
+
+            // Fetch all orders with corresponding product names
+            $query = "
+            SELECT 
+                o.order_id, 
+                CONCAT(o.cust_first_name, ' ', o.cust_last_name) AS customer_name, 
+                p.product_name, 
+                o.order_date, 
+                o.amount, 
+                o.status 
+            FROM Orders o
+            JOIN Products p ON o.product_id = p.product_id
+            ORDER BY o.order_id DESC";  // Latest orders first
+
+            $stmt = $db->prepare($query);
+            $stmt->execute();
+            $orders = $stmt->fetchAll(PDO::FETCH_ASSOC);
         
         ?>
         <div class="orders">
@@ -104,33 +144,33 @@
                             <i class="fas fa-shopping-cart"></i>
                             <div class="summary-details">
                                 <h3>Total Orders</h3>
-                                <p>NA</p>
+                                <p><?php echo $totalOrders; ?></p>
                             </div>
                         </div>
                         <div class="summary-card">
                             <i class="fas fa-check-circle"></i>
                             <div class="summary-details">
                                 <h3>Completed</h3>
-                                <p>NA</p>
+                                <p><?php echo $completedOrders; ?></p>
                             </div>
                         </div>
                         <div class="summary-card">
                             <i class="fas fa-clock"></i>
                             <div class="summary-details">
                                 <h3>Pending</h3>
-                                <p>NA</p>
+                                <p><?php echo $pendingOrders; ?></p>
                             </div>
                         </div>
                         <div class="summary-card">
                             <i class="fas fa-dollar-sign"></i>
                             <div class="summary-details">
                                 <h3>Total Revenue</h3>
-                                <p>NA</p>
+                                <p>₱<?php echo number_format($totalRevenue, 2); ?></p>
                             </div>
                         </div>
                     </div>
-
-                    <table class="data-table">
+                    <!-- comment out old codes -->
+                    <!-- <table class="data-table">
                         <thead>
                             <tr>
                                 <th>Order ID</th>
@@ -200,6 +240,36 @@
                                     </div>
                                 </td>
                             </tr>
+                        </tbody>
+                    </table> -->
+                    <table class="data-table">
+                        <thead>
+                            <tr>
+                                <th>Order ID</th>
+                                <th>Customer</th>
+                                <th>Product</th>
+                                <th>Date</th>
+                                <th>Amount</th>
+                                <th>Status</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <?php foreach ($orders as $order): ?>
+                                <tr>
+                                    <td><?php echo $order['order_id']; ?></td>
+                                    <td><?php echo htmlspecialchars($order['customer_name']); ?></td>
+                                    <td><?php echo htmlspecialchars($order['product_name']); ?></td>
+                                    <td><?php echo $order['order_date']; ?></td>
+                                    <td>₱<?php echo number_format($order['amount'], 2); ?></td>
+                                    <td>
+                                        <span class="status-badge 
+                                            <?php echo ($order['status'] == 'Completed') ? 'status-active' : 
+                                                        (($order['status'] == 'Processing') ? 'status-pending' : 'status-inactive'); ?>">
+                                            <?php echo $order['status']; ?>
+                                        </span>
+                                    </td>
+                                </tr>
+                            <?php endforeach; ?>
                         </tbody>
                     </table>
             

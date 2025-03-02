@@ -15,8 +15,31 @@
         //links 
         $admin_sidebar_script = "./admin-sidebar-scripts.js";
         $dashboard = "./dashboard.js";
-    
-    
+
+        require('../connection.php');
+
+        $db = userdata::connect();
+
+        // Total Sales (sum of completed order)
+        $stmt = $db->prepare("SELECT SUM(amount) AS total_sales FROM Orders WHERE status = 'Completed'");
+        $stmt->execute();
+        $totalSales = $stmt->fetch(PDO::FETCH_ASSOC)['total_sales'] ?? 0;
+
+        // New Orders (orders placed today)
+        $stmt = $db->prepare("SELECT COUNT(*) AS new_orders FROM Orders WHERE order_date = CURDATE()");
+        $stmt->execute();
+        $newOrders = $stmt->fetch(PDO::FETCH_ASSOC)['new_orders'] ?? 0;
+
+        // Total Customers (unique customer count)
+        $stmt = $db->prepare("SELECT COUNT(DISTINCT cust_first_name, cust_last_name) AS total_customers FROM Orders");
+        $stmt->execute();
+        $totalCustomers = $stmt->fetch(PDO::FETCH_ASSOC)['total_customers'] ?? 0;
+
+        // Pending Shipments (orders still processing)
+        $stmt = $db->prepare("SELECT COUNT(*) AS pending_shipments FROM Orders WHERE status = 'Processing'");
+        $stmt->execute();
+        $pendingShipments = $stmt->fetch(PDO::FETCH_ASSOC)['pending_shipments'] ?? 0;
+
     ?>
     <div class="dashboard">
 
@@ -87,28 +110,28 @@
                         <i class="fas fa-dollar-sign"></i>
                     </div>
                     <div class="stat-label">Total Sales</div>
-                    <div class="stat-value">Nan</div>
+                    <div class="stat-value">₱<?php echo number_format($totalSales, 2); ?></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="fas fa-shopping-cart"></i>
                     </div>
                     <div class="stat-label">New Orders</div>
-                    <div class="stat-value">Nan</div>
+                    <div class="stat-value"><?php echo $newOrders; ?></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="fas fa-users"></i>
                     </div>
                     <div class="stat-label">Total Customers</div>
-                    <div class="stat-value">Nan</div>
+                    <div class="stat-value"><?php echo $totalCustomers; ?></div>
                 </div>
                 <div class="stat-card">
                     <div class="stat-icon">
                         <i class="fas fa-box"></i>
                     </div>
                     <div class="stat-label"> Pending Shipments</div>
-                    <div class="stat-value">Nan</div>
+                    <div class="stat-value"><?php echo $pendingShipments; ?></div>
                 </div>
             </div>
 
