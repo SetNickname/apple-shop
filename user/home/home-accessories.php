@@ -4,7 +4,7 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Apple | Accessories</title>
-        <link rel="stylesheet" href="../admin/style.css">
+        <link rel="stylesheet" href="../../admin/style.css">
         <link rel="stylesheet" href="../user.css">
         <link rel="stylesheet" href="../account-container-hidden.css">
         <link rel="icon" href="../../assets/apple.png">
@@ -15,11 +15,21 @@
             $user_navbar_script = "../user-navbar-scripts.js";
             $hide_show_bag = "../hide-show-bag.js";
 
+            session_start(); 
+
+            if (isset($_SESSION['username'])) {
+                $username = $_SESSION['username'];
+                $firstname = $_SESSION['first_name'];
+
+            } else {
+                $firstname = "Guest";
+            }
+
 
         ?>
         <div class="bag-container">
             <header>
-                <h2 class="header-text">Your Bag is empty</h2>
+                <h2 class="header-text">Welcome, <?php echo htmlspecialchars($firstname); ?>!</h2>
             </header>
             <section class="profile-section">
                 <p class="profile-text">My Profile</p>

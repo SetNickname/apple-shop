@@ -14,6 +14,21 @@
     <?php 
         //links
         $order_navbar = "./order-navbar.js";
+
+        session_start(); 
+
+        if (isset($_SESSION['username']) && isset($_SESSION['email'])) {
+            $username = $_SESSION['username'];
+            $email = $_SESSION['email'];
+
+            $firstname = $_SESSION['first_name'];
+            $lastname = $_SESSION['last_name'];
+            $phonenum = $_SESSION['phone_num'];
+
+        } else {
+            $username = "Guest";
+            $email = "Not logged in";
+        }
     
     ?>
     <div class="orders">
@@ -47,8 +62,8 @@
             <div class="sidebar-footer">
                 <div class="user-profile">
                     <div class="user-details">
-                        <div class="user-name">User</div>
-                        <div class="user-email">user@gmail.com</div>
+                        <div class="user-name"><?php echo htmlspecialchars($username); ?></div>
+                        <div class="user-email"><?php echo htmlspecialchars($email); ?></div>
                     </div>
                     <a href="#" class="logout-btn">
                         <img src="../assets/log out.png" alt="log-out logo" width="20" height="20">

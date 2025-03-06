@@ -3,11 +3,11 @@
         public static function connect() {
             try {
                 // replace 
-                // dbname=test_db with dbname=your_database_name
-                // root with your_database_username
-                // and replace_this_with_your_password as your_database_password
+                // your_database_name with dbname=your_database_name
+                // your_database_username with your_database_username
+                // and replace your_password as your_database_password
 
-                $conn = new PDO("mysql:host=localhost; dbname=test_db", "root","");
+                $conn = new PDO("mysql:host=localhost; dbname=your_database_name", "your_database_username","your_password");
                 return $conn;
 
             } catch (PDOException $e1) {

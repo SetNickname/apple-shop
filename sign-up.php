@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple | Login</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./sign-up.css">
+    <link rel="stylesheet" href="./user/styles.css">
+    <link rel="stylesheet" href="./user/sign-up.css">
 </head>
 <body>
     <?php
@@ -17,23 +17,27 @@
             $fname = $_POST['fname'];
             $lname = $_POST['lname'];
             $username = $_POST['username'];
-            $phonenum = $_POST['phonenum'];
+            $phonenum = strval($_POST['phonenum']);
             $email = $_POST['email'];
             $password = $_POST['password'];
             $confpassword = $_POST['confpassword'];
 
             if ($password == $confpassword) {
-                $p=userdata::connect()->prepare('INSERT INTO User (first_name, last_name, username, email, phone_num, password) VALUES (:fname, :lname, :username, :email, :phonenum, :password)');
+                // hash password before storing
+                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
+                
+                $p = userdata::connect()->prepare('INSERT INTO User (first_name, last_name, username, email, phone_num, password) 
+                                                VALUES (:fname, :lname, :username, :email, :phonenum, :password)');
                 $p->bindValue(':fname', $fname);
                 $p->bindValue(':lname', $lname);
                 $p->bindValue(':username', $username);
                 $p->bindValue(':email', $email);
                 $p->bindValue(':phonenum', $phonenum);
-                $p->bindValue(':password', $password);
+                $p->bindValue(':password', $hashedPassword);
                 $p->execute();
 
                 // redirect to login page
-                header('location:login.php');
+                echo "<script>alert('Account Created!'); window.location.href='./login.php';</script>";
             } else {
                 echo "<script>alert('Passwords do not match!')</script>";
             }
@@ -63,7 +67,7 @@
                     <input class="half space-margin" type="text" name="lname" placeholder="Last Name" required>
                 </div>
                 <input class="full space-margin" type="text" name="username" placeholder="Username" required>
-                <input class="full space-margin" type="number" name="phonenum" placeholder="Phone Number" required>
+                <input class="full space-margin" type="tel" name="phonenum" placeholder="Phone Number" required>
                 <input class="full space-margin" type="email" name="email" placeholder="Email" required>
                 <input class="full space-margin" type="password" name="password" placeholder="Password" required>
                 <input class="full space-margin" type="password" name="confpassword" placeholder="Confirm Password" required>

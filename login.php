@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apple | Login</title>
-    <link rel="stylesheet" href="./styles.css">
-    <link rel="stylesheet" href="./login.css">
+    <link rel="stylesheet" href="./user/styles.css">
+    <link rel="stylesheet" href="./user/login.css">
 </head>
 <body>
     <?php
@@ -13,32 +13,40 @@
         $link_to_login = "login.php";
         $link_to_signup = "sign-up.php";
 
-
         require('./connection.php');
+        session_start();
+
         if (isset($_POST['login'])) {
-            $_SESSION['validate'] = false;
+            // $_SESSION['validate'] = false;
             $username = $_POST['username'];
             $password = $_POST['password'];
 
-            $p=userdata::connect()->prepare('SELECT * FROM User WHERE username=:username AND password=:password');
+            $p=userdata::connect()->prepare('SELECT * FROM User WHERE username=:username');
             $p->bindValue(':username', $username);
-            $p->bindValue(':password', $password);
             $p->execute();
-            $d=$p->fetchAll(PDO::FETCH_ASSOC);
+            $user = $p->fetch(PDO::FETCH_ASSOC);
 
-            if ($p->rowCount() > 0) {
-                $_SESSION['username'] = $username;
-                $_SESSION['password'] = $password;
-                $_SESSION['validate'] = true;
+            if ($user) {
+                // manual hashing
+                $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
 
-                
-                echo "<script>alert('Login successful!')</script>";
-                // redirect to home page
-                header('location:home-airpods.html');
-            } else {
-                echo "<script>alert('Invalid username or password!')</script>";
-            }
+                // Verify the password
+                if (password_verify($password, $hashedPassword)) {
 
+                    // store credentials for reference later
+                    $_SESSION['username'] = $user['username'];
+                    $_SESSION['email'] = $user['email'];
+                    $_SESSION['first_name'] = $user['first_name'];
+                    $_SESSION['last_name'] = $user['last_name'];
+                    $_SESSION['phone_num'] = $user['phone_num'];    
+
+                    echo "<script>alert('Login successful!'); window.location.href='./user/home/home-airpods.php';</script>";
+                    exit();
+                } else {
+                    echo "❌ Password mismatch!<br>";
+                }
+            } 
+            exit();
         }
 
         $p=userdata::connect()->prepare('SELECT * FROM User WHERE username=:username AND password=:password');

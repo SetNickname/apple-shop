@@ -16,6 +16,21 @@
         $order_navbar = "./order-navbar.js";
         $user_account_setting = "./user-account-setting.js";
 
+        session_start(); 
+
+        if (isset($_SESSION['username']) && isset($_SESSION['email'])) {
+            $username = $_SESSION['username'];
+            $email = $_SESSION['email'];
+
+            $firstname = $_SESSION['first_name'];
+            $lastname = $_SESSION['last_name'];
+            $phonenum = $_SESSION['phone_num'];
+
+        } else {
+            $username = "Guest";
+            $email = "Not logged in";
+        }
+
     ?>
     <div class="orders">
         <aside class="sidebar">
@@ -48,8 +63,8 @@
             <div class="sidebar-footer">
                 <div class="user-profile">
                     <div class="user-details">
-                        <div class="user-name">User</div>
-                        <div class="user-email">user@gmail.com</div>
+                    <div class="user-name"><?php echo htmlspecialchars($username); ?></div>
+                    <div class="user-email"><?php echo htmlspecialchars($email); ?></div>
                     </div>
                     <a href="#" class="logout-btn" id="log-out">
                         <img src="../assets/log out.png" alt="log-out logo" width="20" height="20">
@@ -63,35 +78,35 @@
             <form action="" class="user-form">
                 <div class="row">
                     <div class="input-box fname">
-                        <input type="text" name="fname" id="fname" required disabled>
                         <label>First Name</label>
+                        <input type="text" name="fname" id="fname" required disabled placeholder="<?php echo htmlspecialchars($firstname); ?>">
                     </div>
                     <div class="input-box lname">
-                        <input type="text" name="lname" id="lname" required disabled>
                         <label>Last Name</label>
+                        <input type="text" name="lname" id="lname" required disabled placeholder="<?php echo htmlspecialchars($lastname); ?>">
                     </div>
                 </div>
                 <div class="row">
                     <div class="input-box uname">
-                        <input type="text" name="uname" id="uname" required disabled>
                         <label>Username</label>
+                        <input type="text" name="uname" id="uname" required disabled placeholder="<?php echo htmlspecialchars($username); ?>">
                     </div>
                     <div class="input-box email">
-                        <input type="email" name="email" id="email" required disabled>
                         <label>Email</label>
+                        <input type="email" name="email" id="email" required disabled placeholder="<?php echo htmlspecialchars($email); ?>">
                     </div>
                 </div>
                 <div class="input-box num">
-                    <input type="text" name="num" id="num" required disabled>
                     <label>Mobile Number</label>
+                    <input type="text" name="num" id="num" required disabled placeholder="<?php echo htmlspecialchars($phonenum); ?>">
                 </div>
                 <div class="input-box password">
-                    <input type="password" name="pword" id="pword" required disabled>
                     <label>Password</label>
+                    <input type="password" name="pword" id="pword" required disabled>
                 </div>
                 <div class="input-box new-password">
-                    <input type="password" name="npword" id="npword" required disabled>
                     <label>Confirm New Password</label>
+                    <input type="password" name="npword" id="npword" required disabled>
                 </div>
 
                 <button class="edit-btn" id="edit-btn">
